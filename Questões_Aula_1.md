@@ -18,6 +18,9 @@ Questões aula 1
 		Controlador Single Loop/Mult Loop; Analisadores Industriais; Acionamentos Elétricos (Soft-Start, Inversor de Frequência e Servoacionamentos);Computador de Vazão;
 
 4.Cite arquiteturas possíveis e as diferenças entre elas.
-
+	
+	Os tipos de arquitetura do tipo PICs, Intel 805 I e ARM 9, permite a leitura simultanea dos dados e do programa, permite barramento de dados e programa separadamente otimizados e ainda guarda dados constantes na memoria do programa, requerendo instrumentação especifica. Ja os tipos de arquitetura de memoria MSP430, Freesclae HCS08 e ARM 7, são mais simples que a arquitetura Havard, sendo também menos eficientes. 
+	
 5.Por que usamos o MSP430 na disciplina, ao invés de outro microcontrolador?
-
+	
+	Porque possui um processador de 16 bits e seu processador permitir aritmetica direta com valores da memoria. Alem disso possui um pequeno gasto de energia, o que evita o aquecimento do dispositivo. Outro fator é que possui uma CPU pequena e eficiente, com vários registradores de 16 bits, esses que podem ser usados para variaveis locais, parâmetros para sub rotina, endereço entre outros fatores 
