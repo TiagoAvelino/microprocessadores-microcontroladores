@@ -91,20 +91,28 @@ add.w R11,R7
 (d) A[2] = A[1] + A[0];
 
 ```C
-mov.w 2(R9),R11
 mov.w 0(R9),R12
-add.w R11,R12
+add.w 2(R9),R12
 mov.w R12,4(R9)
 ```
 
 (e) A[3] = 2*f - 4*h; 
 
 ```C
-add.w R5,R5;  MULTIPLICAR POR 2
+add.w R5,R5;  MULTIPLICAR f POR 2
 mov.w R7,R11
 add.w R11,R7
 add.w R11,R7
-add.w R11,R7
+add.w R11,R7; MULTIPLIOCAR h POR 4
+sub.w R5,R11
+move.w R11,6(R9)
 ```
 
 (f) A[3] = 2*(f - 2*h);
+```C
+move.w R7,R11
+add.w R11,R11
+sub.w R5,R11
+add.w R11,R11
+mov.w R11,6(R9)
+```
