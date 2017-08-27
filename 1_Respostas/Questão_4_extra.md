@@ -62,6 +62,7 @@ mov.w R6,6(R9)
 ```
 
 (f) A[5] = 6*(f - 2*h);
+```C
 mov.w R6,R11
 add.w R6,R11
 sub.w R5,R11
@@ -72,3 +73,4 @@ add.w R11,R12
 add.w R11,R12
 add.w R11,R12
 mov.w R12,A(R9)
+```
