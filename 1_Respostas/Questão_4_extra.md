@@ -72,5 +72,5 @@ add.w R11,R12
 add.w R11,R12
 add.w R11,R12
 add.w R11,R12
-mov.w R12,A(R9)
+mov.w R12,10(R9)
 ```
