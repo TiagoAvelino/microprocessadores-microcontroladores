@@ -40,13 +40,67 @@ bis.w BIT3,R10
 
 if(i>j) f = g+h+10;
 else f = g-h-10;
-Comp R7,
+```C
+mov.w R5, R11
+mov.w #10,R12
+mov.w R6,R13
+Comp R7,R8 ;COMP=i>j
+jl i_maior_que_j
+sub.w  R11,R12
+sub.w R12,R13
+JUMP EXIT
+
+i_maior_que_j:
+add.w R6,R11
+add.w R11,R12
+mov.w R12,R4
+
+EXIT:
+
+```
+
 
 3-"Traduza" o seguinte trecho de código em C para o assembly do MSP430:
 while(save[i]!=k) i++;
 
+```C
+LOOP: mov.w R7, R12 
+inc.w R12  
+add.w R10, R1.w
+cmp 0(R12), R9 
+jnq EXIT  
+inc.w R7 
+jmp LOOP
+EXIT:
+...
+```
+
 4-"Traduza" o seguinte trecho de código em C para o assembly do MSP430:
 for(i=0; i<100; i++) A[i] = i*2;
+```C
+mov.w #0, R7
+LOOP: mov.w R7,R12
+rla R12
+mov.w R12,R9(R12)
+cmp R12,#100
+inc R7
+jl loop
+Exit:
+...
+```
 
 5-"Traduza" o seguinte trecho de código em C para o assembly do MSP430:
 for(i=99; i>=0; i--) A[i] = i*2;
+```C
+mov.w R7,R12
+mov.w #99, R7
+loop:
+rla R12
+mov.w R12,R12(R9)
+
+cmp #0, R7
+dec.w R7
+jge loop
+```
+
+
