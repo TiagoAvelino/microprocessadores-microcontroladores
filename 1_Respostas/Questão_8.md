@@ -6,6 +6,7 @@ Para todas as questões, utilize os LEDs e/ou os botões da placa Launchpad do M
 #define LED1 BIT0
 #define LED2 BIT6
 #define LEDS (LED1+LED2)
+/*função atraso*/
 void delay(volatile unsigned int i){
 while(i<5000)
 {
@@ -77,6 +78,13 @@ P1OUT &= ~(LED1 + LED2);
 #define BTN BIT2
 #define LED1 BIT0
 #define LED2 BIT6
+/*função atraso*/
+void delay(volatile unsigned int i){
+while(i<5000)
+{
+i++;
+}
+}
 void main(void){
 WDTCTL = WDTPW | WDTHOLD;
 P1OUT = 0;
